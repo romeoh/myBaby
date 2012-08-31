@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<h1>으뜸이 체중계산기</h1>
+이전체중: <input type="text" id="inp0" value="">
+현재체중: <input type="text" id="inp1" value="">
+<button id="btn">계산</button>
+
+
+<script type="text/javascript"> 
+
+var inp0 = document.querySelector("#inp0")
+var inp1 = document.querySelector("#inp1")
+var btn = document.querySelector("#btn")
+
+btn.addEventListener("click", function(){
+	var s = inp0.value;
+	var f = inp1.value;
+	if(s > f){
+		v = "감소 했습니다.";
+	}else{
+		v = "증가 했습니다.";
+	}
+	alert( Math.floor( (f-s)/s * 10000 ) /100 +"% "+v )
+}, false);
+
+</script>
+</body>
+</html>
