@@ -1,25 +1,33 @@
 <!doctype html>
 <html lang="ko">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <meta charset="utf-8">
+<link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+<link rel="apple-touch-startup-image" href="splash-screen.png" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>생활계산기</title>
+<style>
+input {width:80px}
+</style>
 </head>
 <body>
 
-<h1>으뜸이 체중계산기</h1>
-이전체중: <input type="text" id="inp0" value="">
-현재체중: <input type="text" id="inp1" value="">
-<button id="btn">계산</button>
-
+<h1>체중계산기</h1>
+<input type="number" id="vala0" value="" placeholder="이전체중">
+<input type="number" id="vala1" value="" placeholder="현재체중">
+<button id="btna0">계산</button>
 
 <script type="text/javascript"> 
+var vala0 = document.querySelector("#vala0")
+var vala1 = document.querySelector("#vala1")
+var btna0 = document.querySelector("#btna0")
 
-var inp0 = document.querySelector("#inp0")
-var inp1 = document.querySelector("#inp1")
-var btn = document.querySelector("#btn")
-
-btn.addEventListener("click", function(){
-	var s = inp0.value;
-	var f = inp1.value;
+btna0.addEventListener("click", function(){
+	var s = vala0.value;
+	var f = vala1.value;
 	if(s > f){
 		v = "감소 했습니다.";
 	}else{
@@ -27,7 +35,53 @@ btn.addEventListener("click", function(){
 	}
 	alert( Math.floor( (f-s)/s * 10000 ) /100 +"% "+v )
 }, false);
+</script>
 
+
+
+<h1>용량계산기</h1>
+A: <input type="number" id="valb0" value="" placeholder="용량"> / <input type="number" id="valb1" value="" placeholder="가격"><br>
+B: <input type="number" id="valb2" value="" placeholder="용량"> / <input type="number" id="valb3" value="" placeholder="가격">
+<button id="btnb0">계산</button>
+
+<script type="text/javascript"> 
+var valb0 = document.querySelector("#valb0");
+var valb1 = document.querySelector("#valb1");
+var valb2 = document.querySelector("#valb2");
+var valb3 = document.querySelector("#valb3");
+var btnb0 = document.querySelector("#btnb0");
+
+btnb0.addEventListener("click", function(){
+	var a = valb1.value * valb2.value;
+	var b = valb0.value * valb3.value;
+	var c = a/b;
+	if(c > 1){
+		alert("A가 "+Math.floor(c*100)/100+"배 비쌉니다.")
+	}else if(c < 1){
+		alert("B가 "+Math.floor((b/a)*100)/100+"배 비쌉니다.")
+	}else if(c == 1){
+		alert("같은 가격입니다.")
+	}
+}, false);
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
