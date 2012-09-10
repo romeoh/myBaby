@@ -45,7 +45,7 @@ B: <input type="number" id="valb2" value="" placeholder="용량"> / <input type=
 <button id="btnb0">계산</button>
 
 <h1>민기 동영상</h1>
-<a href="https://www.evernote.com/shard/s55/sh/ba732e35-06eb-40ec-963a-dd2f6a834c5e/cd2b7874f91ef031b5bbd935f8d47487">링크...</a>
+<button id="btnLink" data-url="https://www.evernote.com/shard/s55/sh/ba732e35-06eb-40ec-963a-dd2f6a834c5e/cd2b7874f91ef031b5bbd935f8d47487">링크</button>
 
 <script type="text/javascript"> 
 var valb0 = document.querySelector("#valb0");
@@ -66,6 +66,11 @@ btnb0.addEventListener("click", function(){
 		alert("같은 가격입니다.")
 	}
 }, false);
+
+document.querySelector("#btnLink").addEventListener("click", function(evt){
+	evt.preventDefault();
+	document.location.href = evt.currentTarget.getAttribute("data-url");
+}, false)
 </script>
 </body>
 </html>
